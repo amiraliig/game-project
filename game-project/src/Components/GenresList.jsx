@@ -33,9 +33,9 @@ export const GenresList = () => {
               key={item.id}
               src={item.image_background}
               alt=""
-              className="h-10 w-10 object-cover rounded-lg"
+              className="h-12 w-12  object-cover rounded-lg"
             />
-            <span className="dark:text-white mx-2">{item.name}</span>
+            <span className="dark:text-white mx-2 text-lg">{item.name}</span>
           </li>
         ))}
       </ul>

@@ -20,7 +20,7 @@ export const Header = () => {
     }
   }, [dark]);
   return (
-    <div className="flex items-center p-2 justify-around  mx-auto m-0  dark:text-white">
+    <div className="flex items-center p-2 justify-around  mx-auto m-0  dark:text-white py-6">
       {dark ? (
         <img
           src={LogoDark}

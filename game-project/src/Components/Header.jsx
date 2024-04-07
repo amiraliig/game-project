@@ -3,8 +3,10 @@ import LogoLight from "./../assets/Images/Logo2.png";
 import LogoDark from "./../assets/Images/Logo.png";
 import { MdAccountCircle } from "react-icons/md";
 import { HiOutlineSearch, HiMoon, HiOutlineSun } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 export const Header = () => {
   const [dark, setDark] = useState(localStorage.getItem("darkMode") === "true");
+  const navigate = useNavigate();
   const darkHandler = () => {
     setDark(!dark);
   };
@@ -20,7 +22,7 @@ export const Header = () => {
     }
   }, [dark]);
   return (
-    <div className="flex items-center p-2 justify-around  mx-auto m-0  dark:text-white py-6">
+    <div className="flex items-center p-2 justify-around  mx-auto m-0  dark:text-white py-6 cursor-pointer">
       {dark ? (
         <img
           src={LogoDark}
@@ -28,6 +30,9 @@ export const Header = () => {
           width={50}
           height={50}
           className="mx-2"
+          onClick={() => {
+            navigate("/");
+          }}
         />
       ) : (
         <img
@@ -36,6 +41,9 @@ export const Header = () => {
           width={50}
           height={50}
           className="mx-2"
+          onClick={() => {
+            navigate("/");
+          }}
         />
       )}
 

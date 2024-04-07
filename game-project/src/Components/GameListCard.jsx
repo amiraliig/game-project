@@ -5,7 +5,7 @@ export const GameListCard = ({ game }) => {
     console.log(game);
   });
   return (
-    <div className="dark:text-white m-2  h-[290px] bg-[#4242424f] rounded-lg">
+    <div className="dark:text-white m-2  h-[290px] bg-[#4242424f] rounded-lg cursor-pointer hover:h-[]">
       <img
         src={game.background_image}
         className="rounded-lg h-52 object-cover w-80"

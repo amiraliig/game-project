@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { CanceledError } from "axios";
 import React, { useEffect, useState } from "react";
 import GlobalApi from "../Services/GlobalApi";
 
@@ -6,17 +6,19 @@ export const GenresList = () => {
   const [dataGenres, setDataGenres] = useState([]);
   const [selectedGenre, setSelectdeGenre] = useState(null);
   useEffect(() => {
+    
     GlobalApi.getGenreList
       .then((res) => {
         setDataGenres(res.data.results);
       })
       .catch((error) => {
-        console.error("Error fetching genres:", error);
+      
       });
+      return()=> GlobalApi.controller.abort()
   }, []);
 
   return (
-    <div className="p-2">
+    <div className="mx-4 hidden lg:block">
       <h2 className="text-3xl bold font-bold dark:text-white m-2">Genres</h2>
       <ul className="flex flex-col gap-2">
         {dataGenres.map((item, index) => (

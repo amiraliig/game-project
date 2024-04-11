@@ -47,13 +47,13 @@ export const Header = () => {
         />
       )}
 
-      <div className="flex bg-slate-200 rounded-full items-center w-4/6 lg-max:h-[30px] ">
-        <HiOutlineSearch className="cursor-pointer scale-125 mx-2 text-slate-800" />
+      <div className="flex  bg-[#9b9b9b41] rounded-full items-center w-4/6 lg-max:h-[30px] ">
+        <HiOutlineSearch className="cursor-pointer scale-125 mx-2 text-slate-100" />
         <input
           type="text"
           name=""
           id=""
-          className="outline-none border-solid bg-transparent w-full px-2 text-slate-700 lg-max:h-2 p-2"
+          className="outline-none border-solid bg-transparent w-full px-2 text-slate-100 lg-max:h-2 p-2"
           placeholder="Search Games"
         />
       </div>

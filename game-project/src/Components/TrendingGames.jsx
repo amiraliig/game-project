@@ -5,9 +5,9 @@ export const TrendingGames = ({ gameList }) => {
   const navigate = useNavigate()
   
   return (
-    <div className="dark:text-white p-2 m-2">
-      <h2 className="font-bold text-3xl m-2">Trending Games</h2>
-      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 bg-opacity-30">
+    <div className="dark:text-white ">
+      <h2 className="font-bold text-3xl my-2">Trending Games</h2>
+      <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 bg-opacity-30 gap-5">
         {gameList.map(
           (item, index) =>
             index < 9 && (

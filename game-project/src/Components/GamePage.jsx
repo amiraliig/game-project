@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import GlobalApi from "../Services/GlobalApi";
 import { GenresList } from "./GenresList";
 import { PlatformIcomList } from "./PlatformIcomList";
+import converterTime from "../Services/reslisedTime";
 
 export const GamePage = () => {
   //function
@@ -27,7 +28,7 @@ export const GamePage = () => {
         <div className="flex flex-row relative ">
           <div className="lg:w-7/12 w-full">
             <div className="flex">
-              <span className="bg-white text-slate-800 p-1 rounded-lg  ">RELEASED IN  {gamePage.released}</span>
+              <span className="bg-white text-slate-800 p-1 rounded-lg  ">RELEASED IN  {converterTime(gamePage.released)}</span>
               <PlatformIcomList platforms={gamePage} />
               <span>AVARAGE PLAY TIME:{gamePage.playtime}</span>
             </div>

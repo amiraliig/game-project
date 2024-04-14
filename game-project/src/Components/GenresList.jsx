@@ -1,6 +1,7 @@
 import axios, { CanceledError } from "axios";
 import React, { useEffect, useState } from "react";
 import GlobalApi from "../Services/GlobalApi";
+import getCorppedImageUrl from "../Services/image-url";
 
 export const GenresList = () => {
   const [dataGenres, setDataGenres] = useState([]);
@@ -33,7 +34,7 @@ export const GenresList = () => {
           >
             <img
               key={item.id}
-              src={item.image_background}
+              src={getCorppedImageUrl(item.image_background,600,400)}
               alt=""
               className="h-12 w-12  object-cover rounded-lg"
             />

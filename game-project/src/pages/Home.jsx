@@ -3,20 +3,28 @@ import { GenresList } from "../Components/GenresList";
 import GlobalApi from "../Services/GlobalApi";
 import { Banner } from "../Components/Banner";
 import { TrendingGames } from "../Components/TrendingGames";
+import converterTime from "../Services/reslisedTime";
+import { GameCardSkleton } from "../Components/GameCardSkleton";
+import useGames from "../hooks/useGames";
+import { BannerSkleton } from "../Components/BannerSkleton";
 
 export const Home = () => {
-  const [allGameList, setAllGameList] = useState([]);
-  useEffect(() => {
-    GlobalApi.getAllGames.then((res) => {
-      setAllGameList(res.data.results);
-    });
-  });
+  const { games, err, isLoading } = useGames();
+  console.log(games);
+  if (isLoading) {
+    return (
+      <>
+        <BannerSkleton />
+        <GameCardSkleton />
+      </>
+    );
+  }
   return (
     <div className="">
-      {allGameList.length > 0 ? (
+      {games.length > 0 ? (
         <div>
-          <Banner gameBanner={allGameList[0]} />
-          <TrendingGames gameList={allGameList} />
+          <Banner gameBanner={games} />
+          <TrendingGames gameList={games} isLoading={isLoading} />
         </div>
       ) : null}
     </div>

@@ -24,13 +24,13 @@ export const PlatformIcomList = ({ platforms }) => {
     nintendo: BsNintendoSwitch,
     ios: FaAppStoreIos,
   };
-  console.log(platforms.id);
+  // console.log(platforms.id);
   return (
     <div className="text-white mx-2" >
-      {platforms.parent_platforms.map((item) => (
+      {platforms.parent_platforms.map((item,index) => (
         //<div key={item.id}>{item.platform.slug}</div>
         
-        <Icon as={iconObj[item.platform.slug]} className="mx-1"/>
+        <Icon as={iconObj[item.platform.slug]} key={index} className="mx-1"/>
       ))}
     </div>
   );

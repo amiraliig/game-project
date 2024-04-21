@@ -3,7 +3,7 @@ import LogoLight from "./../assets/Images/Logo2.png";
 import LogoDark from "./../assets/Images/Logo.png";
 import { MdAccountCircle } from "react-icons/md";
 import { HiOutlineSearch, HiMoon, HiOutlineSun } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const Header = () => {
   const [dark, setDark] = useState(localStorage.getItem("darkMode") === "true");
   const navigate = useNavigate();
@@ -61,27 +61,27 @@ export const Header = () => {
         <MdAccountCircle className="text-[35px]" />
       </div>
       <div className="p-2 lg lg-max:hidden">
-        <a
-          href=""
+        <Link
+          to="/login"
           className="hover:underline decoration-slate-400 p-2 underline-offset-8 transform text-based font-bold"
         >
           LOG IN
-        </a>
-        <a
-          href=""
+        </Link>
+        <Link
+         to="/signup"
           className="hover:underline decoration-slate-400 p-2 underline-offset-8 transform text-based font-bold "
         >
           SIGN UP
-        </a>
+        </Link>
       </div>
       <div
-        className="flex content-center mx-2 p-2 lg-max:hidden"
+        className="flex content-center p-2 lg-max:hidden"
         onClick={() => darkHandler()}
       >
         {dark ? (
-          <HiMoon className="text-[35px] bg-slate-200 rounded-full p-1 text-slate-700 cursor-pointer" />
+          <HiMoon className="text-[35px]  rounded-full p-1 text-slate-500 cursor-pointer" />
         ) : (
-          <HiOutlineSun className="text-[35px] bg-slate-200 rounded-full p-1 cursor-pointer text-slate-700" />
+          <HiOutlineSun className="text-[35px] rounded-full p-1 cursor-pointer text-slate-700" />
         )}
       </div>
     </div>

@@ -26,11 +26,11 @@ export const PlatformIcomList = ({ platforms }) => {
   };
   // console.log(platforms.id);
   return (
-    <div className="text-white mx-2" >
+    <div className="text-slate-600" >
       {platforms.parent_platforms.map((item,index) => (
         //<div key={item.id}>{item.platform.slug}</div>
         
-        <Icon as={iconObj[item.platform.slug]} key={index} className="mx-1"/>
+        <Icon as={iconObj[item.platform.slug]} key={index} className="mr-2 dark:text-slate-200 "/>
       ))}
     </div>
   );

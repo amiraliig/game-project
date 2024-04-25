@@ -7,7 +7,7 @@ export const GenresSkeleton = () => {
       <h2 className="text-3xl bold font-bold dark:text-white m-2">Genres</h2>
       <ul className="flex flex-col gap-2">
         {arr.map((item, index) => (
-          <div className="flex items-center justify-center h-12 mb-4 bg-gray-300 rounded dark:bg-[#9b9b9b41]">
+          <div key={item} className="flex items-center justify-center h-12 mb-4 bg-gray-300 rounded dark:bg-[#9b9b9b41]">
           <svg
             className="w-12 h-12 text-gray-200 dark:text-gray-600 mx-3"
             aria-hidden="true"

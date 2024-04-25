@@ -1,22 +1,4 @@
-import { useEffect, useState } from "react";
-import GlobalApi from "../Services/GlobalApi";
+import useData from "./useData";
 
-const useGames = () => {
-  const [games, setGames] = useState([]);
-  const [err, setErr] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    GlobalApi.getAllGames
-      .then((res) => {
-        setGames(res.data.results);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
-  }, []);
-  return { games, err, isLoading };
-};
+const useGames = (selectGenreGame) => useData("/games",{params:{genres:selectGenreGame?.id}},[selectGenreGame]);
 export default useGames;

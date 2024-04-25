@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GameListCard } from "./GameListCard";
 import { useNavigate } from "react-router-dom";
 import { GameCardSkleton } from "./GameCardSkleton";

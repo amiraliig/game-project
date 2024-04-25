@@ -4,6 +4,7 @@ import LogoDark from "./../assets/Images/Logo.png";
 import { MdAccountCircle } from "react-icons/md";
 import { HiOutlineSearch, HiMoon, HiOutlineSun } from "react-icons/hi";
 import { Link, useNavigate } from "react-router-dom";
+import ModalLogin from "./ModalLogin";
 export const Header = () => {
   const [dark, setDark] = useState(localStorage.getItem("darkMode") === "true");
   const navigate = useNavigate();
@@ -61,12 +62,7 @@ export const Header = () => {
         <MdAccountCircle className="text-[35px]" />
       </div>
       <div className="p-2 lg lg-max:hidden">
-        <Link
-          to="/login"
-          className="hover:underline decoration-slate-400 p-2 underline-offset-8 transform text-based font-bold"
-        >
-          LOG IN
-        </Link>
+      <ModalLogin />
         <Link
          to="/signup"
           className="hover:underline decoration-slate-400 p-2 underline-offset-8 transform text-based font-bold "
@@ -83,7 +79,9 @@ export const Header = () => {
         ) : (
           <HiOutlineSun className="text-[35px] rounded-full p-1 cursor-pointer text-slate-700" />
         )}
+
       </div>
+     
     </div>
   );
 };

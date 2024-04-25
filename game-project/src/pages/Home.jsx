@@ -5,12 +5,12 @@ import { Banner } from "../Components/Banner";
 import { TrendingGames } from "../Components/TrendingGames";
 import converterTime from "../Services/reslisedTime";
 import { GameCardSkleton } from "../Components/GameCardSkleton";
-import useGames from "../hooks/useGames";
-import { BannerSkleton } from "../Components/BannerSkleton";
 
-export const Home = () => {
-  const { games, err, isLoading } = useGames();
-  console.log(games);
+import { BannerSkleton } from "../Components/BannerSkleton";
+import useGames  from "../hooks/useGames";
+export const Home = (selectGenreGame) => {
+  const { data, err, isLoading } = useGames(selectGenreGame.selectGenreGame);
+ console.log(data)
   if (isLoading) {
     return (
       <>
@@ -21,10 +21,10 @@ export const Home = () => {
   }
   return (
     <div className="">
-      {games.length > 0 ? (
+      {data.length > 0 ? (
         <div>
-          <Banner gameBanner={games} />
-          <TrendingGames gameList={games} isLoading={isLoading} />
+          <Banner gameBanner={data} />
+          <TrendingGames gameList={data} isLoading={isLoading} />
         </div>
       ) : null}
     </div>
